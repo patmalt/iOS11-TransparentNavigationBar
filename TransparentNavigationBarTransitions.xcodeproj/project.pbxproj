@@ -8,16 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5ABF44E91F61BF7B00A9385D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF44E81F61BF7B00A9385D /* Default-568h@2x.png */; };
+		5AF88A311F62D5FD000EA986 /* TranslucentNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88A2F1F62D5FC000EA986 /* TranslucentNavBarViewController.swift */; };
+		5AF88A321F62D5FD000EA986 /* OpaqueNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88A301F62D5FD000EA986 /* OpaqueNavBarViewController.swift */; };
+		5AF88A341F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */; };
 		972CDE3B1F61B89B00EC0745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */; };
-		972CDE3D1F61B89B00EC0745 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972CDE3C1F61B89B00EC0745 /* ViewController.swift */; };
 		972CDE421F61B89B00EC0745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972CDE411F61B89B00EC0745 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5ABF44E81F61BF7B00A9385D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5AF88A2F1F62D5FC000EA986 /* TranslucentNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslucentNavBarViewController.swift; sourceTree = "<group>"; };
+		5AF88A301F62D5FD000EA986 /* OpaqueNavBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpaqueNavBarViewController.swift; sourceTree = "<group>"; };
+		5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslucentNavBarWithFixViewController.swift; sourceTree = "<group>"; };
 		972CDE371F61B89B00EC0745 /* TransparentNavigationBarTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransparentNavigationBarTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		972CDE3C1F61B89B00EC0745 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		972CDE411F61B89B00EC0745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		972CDE461F61B89B00EC0745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ABF44F31F61C74100A9385D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				972CDE411F61B89B00EC0745 /* Assets.xcassets */,
+				972CDE461F61B89B00EC0745 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		972CDE2E1F61B89B00EC0745 = {
 			isa = PBXGroup;
 			children = (
@@ -53,10 +66,11 @@
 		972CDE391F61B89B00EC0745 /* TransparentNavigationBarTransitions */ = {
 			isa = PBXGroup;
 			children = (
+				5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */,
+				5AF88A301F62D5FD000EA986 /* OpaqueNavBarViewController.swift */,
+				5AF88A2F1F62D5FC000EA986 /* TranslucentNavBarViewController.swift */,
 				972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */,
-				972CDE3C1F61B89B00EC0745 /* ViewController.swift */,
-				972CDE411F61B89B00EC0745 /* Assets.xcassets */,
-				972CDE461F61B89B00EC0745 /* Info.plist */,
+				5ABF44F31F61C74100A9385D /* Resources */,
 			);
 			path = TransparentNavigationBarTransitions;
 			sourceTree = "<group>";
@@ -132,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				972CDE3D1F61B89B00EC0745 /* ViewController.swift in Sources */,
+				5AF88A311F62D5FD000EA986 /* TranslucentNavBarViewController.swift in Sources */,
 				972CDE3B1F61B89B00EC0745 /* AppDelegate.swift in Sources */,
+				5AF88A321F62D5FD000EA986 /* OpaqueNavBarViewController.swift in Sources */,
+				5AF88A341F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TransparentNavigationBarTransitions/Info.plist;
+				INFOPLIST_FILE = TransparentNavigationBarTransitions/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Badly-Cut-Productions.TransparentNavigationBarTransitions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -266,7 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TransparentNavigationBarTransitions/Info.plist;
+				INFOPLIST_FILE = TransparentNavigationBarTransitions/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Badly-Cut-Productions.TransparentNavigationBarTransitions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
