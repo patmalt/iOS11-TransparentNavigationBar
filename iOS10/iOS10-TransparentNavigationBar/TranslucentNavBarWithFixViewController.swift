@@ -11,6 +11,7 @@ class TranslucentNavBarWithFixViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		UIApplication.shared.keyWindow?.backgroundColor = .purple
         extendedLayoutIncludesOpaqueBars = true
         edgesForExtendedLayout = .top
         navigationController?.navigationBar.isTranslucent = true
@@ -20,5 +21,9 @@ class TranslucentNavBarWithFixViewController: UIViewController {
 		navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.subviews.first?.alpha = 0.2
     }
+	
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		UIApplication.shared.keyWindow?.backgroundColor = nil
+	}
 }
-
