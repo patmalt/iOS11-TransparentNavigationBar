@@ -27,7 +27,6 @@ class CustomNavigationBar {
 		
 		navigationBar.translatesAutoresizingMaskIntoConstraints = false
 		navigationBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-		navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
 		navigationBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		navigationBar.heightAnchor.constraint(equalToConstant: height).isActive = true
 		
@@ -38,7 +37,14 @@ class CustomNavigationBar {
 		topper.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		topper.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		topper.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-		topper.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+		topper.bottomAnchor.constraint(equalTo: navigationBar.topAnchor).isActive = true
+		
+		if #available(iOS 11.0, *) {
+			navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+		} else {
+			let statusBarHeight = UIApplication.shared.statusBarFrame.height
+			navigationBar.topAnchor.constraint(equalTo: view.topAnchor, constant: statusBarHeight).isActive = true
+		}
 		
 		return navigationBar
 	}
