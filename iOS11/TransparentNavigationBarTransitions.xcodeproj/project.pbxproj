@@ -13,6 +13,9 @@
 		5AF88A341F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */; };
 		972CDE3B1F61B89B00EC0745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */; };
 		972CDE421F61B89B00EC0745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972CDE411F61B89B00EC0745 /* Assets.xcassets */; };
+		977D46A11F74479700ACD5AD /* NewTranslucentNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D46A01F74479700ACD5AD /* NewTranslucentNavBarViewController.swift */; };
+		977D46A31F7458A300ACD5AD /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977D46A21F7458A300ACD5AD /* CustomNavigationController.swift */; };
+		977D46A51F745C1E00ACD5AD /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977D46A41F745C1E00ACD5AD /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		972CDE411F61B89B00EC0745 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		972CDE461F61B89B00EC0745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		977D46A01F74479700ACD5AD /* NewTranslucentNavBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTranslucentNavBarViewController.swift; sourceTree = "<group>"; };
+		977D46A21F7458A300ACD5AD /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		977D46A41F745C1E00ACD5AD /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 			children = (
 				972CDE411F61B89B00EC0745 /* Assets.xcassets */,
 				972CDE461F61B89B00EC0745 /* Info.plist */,
+				977D46A41F745C1E00ACD5AD /* Storyboard.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -66,11 +73,13 @@
 		972CDE391F61B89B00EC0745 /* TransparentNavigationBarTransitions */ = {
 			isa = PBXGroup;
 			children = (
-				5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */,
-				5AF88A301F62D5FD000EA986 /* OpaqueNavBarViewController.swift */,
 				5AF88A2F1F62D5FC000EA986 /* TranslucentNavBarViewController.swift */,
+				5AF88A331F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift */,
+				977D46A01F74479700ACD5AD /* NewTranslucentNavBarViewController.swift */,
+				5AF88A301F62D5FD000EA986 /* OpaqueNavBarViewController.swift */,
 				972CDE3A1F61B89B00EC0745 /* AppDelegate.swift */,
 				5ABF44F31F61C74100A9385D /* Resources */,
+				977D46A21F7458A300ACD5AD /* CustomNavigationController.swift */,
 			);
 			path = TransparentNavigationBarTransitions;
 			sourceTree = "<group>";
@@ -136,6 +145,7 @@
 			files = (
 				972CDE421F61B89B00EC0745 /* Assets.xcassets in Resources */,
 				5ABF44E91F61BF7B00A9385D /* Default-568h@2x.png in Resources */,
+				977D46A51F745C1E00ACD5AD /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977D46A31F7458A300ACD5AD /* CustomNavigationController.swift in Sources */,
 				5AF88A311F62D5FD000EA986 /* TranslucentNavBarViewController.swift in Sources */,
 				972CDE3B1F61B89B00EC0745 /* AppDelegate.swift in Sources */,
+				977D46A11F74479700ACD5AD /* NewTranslucentNavBarViewController.swift in Sources */,
 				5AF88A321F62D5FD000EA986 /* OpaqueNavBarViewController.swift in Sources */,
 				5AF88A341F62D99F000EA986 /* TranslucentNavBarWithFixViewController.swift in Sources */,
 			);

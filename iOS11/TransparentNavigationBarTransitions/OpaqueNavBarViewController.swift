@@ -21,7 +21,7 @@ class OpaqueNavBarViewController: UIViewController {
 	
 	@objc
 	private func tap() {
-		let viewController = TranslucentNavBarWithFixViewController()
+		let viewController = NewTranslucentNavBarViewController()
 		navigationController?.pushViewController(viewController, animated: true)
 	}
 }
