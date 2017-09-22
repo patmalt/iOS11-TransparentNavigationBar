@@ -7,7 +7,14 @@ class NewTranslucentNavBarViewController: UIViewController {
         
         view.backgroundColor = .blue
         
-        addCustomNavigationBar()
+		let imageView = UIImageView(image: #imageLiteral(resourceName: "floorplan"))
+		view.addSubview(imageView)
+		imageView.translatesAutoresizingMaskIntoConstraints = false
+		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+		imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+		
+		addCustomNavigationBar(tintColor: .black)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +44,7 @@ class NewTranslucentNavBarViewController: UIViewController {
 		
         navigationBar.setItems([titleNavigationItem], animated: false)
         
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: tint]
         navigationBar.backgroundColor = color
         navigationBar.barTintColor = color
         navigationBar.tintColor = tint
