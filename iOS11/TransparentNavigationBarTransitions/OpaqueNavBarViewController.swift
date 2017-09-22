@@ -8,15 +8,13 @@ class OpaqueNavBarViewController: UIViewController {
 		title = "Opaque View Controller"
 		view.backgroundColor = .lightGray
 		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		navigationController?.navigationBar.isTranslucent = false
-		navigationController?.navigationBar.alpha = 1.0
-		navigationController?.navigationBar.barTintColor = .purple
-		navigationController?.navigationBar.tintColor = .white
-		navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+		
+		let navigationBar = CustomNavigationBar.addCustomNavigationBar(toView: view,
+		                                                               color: .purple,
+		                                                               tintColor: .white,
+		                                                               height: navigationBarHeight)
+		let navigationItem = UINavigationItem(title: "Opaque")
+		navigationBar.setItems([navigationItem], animated: false)
 	}
 	
 	@objc

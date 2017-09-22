@@ -4,29 +4,28 @@ import UIKit
 class NewTranslucentNavBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
         view.backgroundColor = .blue
         
 		let imageView = UIImageView(image: #imageLiteral(resourceName: "floorplan"))
+		imageView.isUserInteractionEnabled = true
+		imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
 		view.addSubview(imageView)
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		imageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 		imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
 		
-		addCustomNavigationBar(tintColor: .black)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+		let navigationBar = CustomNavigationBar.addCustomNavigationBar(toView: view,
+		                                                               color: .clear,
+		                                                               tintColor: .black,
+		                                                               height: navigationBarHeight)
+		let titleNavigationItem = UINavigationItem(title: "Hello")
+		titleNavigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icBackarrow"),
+		                                                        style: .plain,
+		                                                        target: self,
+		                                                        action: #selector(pop))
+		navigationBar.setItems([titleNavigationItem], animated: false)
     }
 	
 	@objc
@@ -39,45 +38,6 @@ class NewTranslucentNavBarViewController: UIViewController {
 		let viewController = OpaqueNavBarViewController()
 		navigationController?.pushViewController(viewController, animated: true)
 	}
-    
-    func addCustomNavigationBar(color: UIColor = .clear, tintColor tint: UIColor = .white) {
-        let navigationBar = UINavigationBar()
-        
-        let titleNavigationItem = UINavigationItem()
-        titleNavigationItem.title = title ?? "Hello"
-		titleNavigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icBackarrow"),
-		                                                        style: .plain,
-		                                                        target: self,
-		                                                        action: #selector(pop))
-		
-        navigationBar.setItems([titleNavigationItem], animated: false)
-        
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: tint]
-        navigationBar.backgroundColor = color
-        navigationBar.barTintColor = color
-        navigationBar.tintColor = tint
-        navigationBar.shadowImage = UIImage()
-        navigationBar.setBackgroundImage(UIImage(), for: .top, barMetrics: .default)
-        
-        view.addSubview(navigationBar)
-        
-        navigationBar.translatesAutoresizingMaskIntoConstraints = false
-        navigationBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        navigationBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
-        let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 44
-        navigationBar.heightAnchor.constraint(equalToConstant: navigationBarHeight).isActive = true
-        
-        let topper = UIView()
-        topper.backgroundColor = color
-        view.addSubview(topper)
-        topper.translatesAutoresizingMaskIntoConstraints = false
-        topper.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        topper.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        topper.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        topper.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-    }
 }
 
 extension UIImage {
