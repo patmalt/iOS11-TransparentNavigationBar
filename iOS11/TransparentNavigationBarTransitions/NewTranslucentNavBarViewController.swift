@@ -8,24 +8,17 @@ class NewTranslucentNavBarViewController: UIViewController {
         view.backgroundColor = .blue
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
-        addCustomNavigationBar(color: .red)
-        
-        extendedLayoutIncludesOpaqueBars = true
-        edgesForExtendedLayout = .top
+        addCustomNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        //navigationController?.navigationBar.shadowImage = nil
     }
     
     @objc
@@ -33,7 +26,7 @@ class NewTranslucentNavBarViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func addCustomNavigationBar(color: UIColor = .red) {
+    func addCustomNavigationBar(color: UIColor = .clear, tintColor tint: UIColor = .white) {
         let navigationBar = UINavigationBar()
         
         let titleNavigationItem = UINavigationItem()
@@ -43,6 +36,7 @@ class NewTranslucentNavBarViewController: UIViewController {
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationBar.backgroundColor = color
         navigationBar.barTintColor = color
+        navigationBar.tintColor = tint
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .top, barMetrics: .default)
         
