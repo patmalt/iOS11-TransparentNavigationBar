@@ -6,7 +6,6 @@ class NewTranslucentNavBarViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .blue
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
         addCustomNavigationBar()
     }
@@ -20,17 +19,22 @@ class NewTranslucentNavBarViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    
-    @objc
-    private func tap() {
-        navigationController?.popViewController(animated: true)
-    }
+	
+	@objc
+	private func pop() {
+		navigationController?.popViewController(animated: true)
+	}
     
     func addCustomNavigationBar(color: UIColor = .clear, tintColor tint: UIColor = .white) {
         let navigationBar = UINavigationBar()
         
         let titleNavigationItem = UINavigationItem()
         titleNavigationItem.title = title ?? "Hello"
+		titleNavigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icBackarrow"),
+		                                                        style: .plain,
+		                                                        target: self,
+		                                                        action: #selector(pop))
+		
         navigationBar.setItems([titleNavigationItem], animated: false)
         
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
