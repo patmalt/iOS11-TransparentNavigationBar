@@ -6,11 +6,20 @@ class CustomNavigationController: UINavigationController {
 	
 	override init(rootViewController: UIViewController) {
 		super.init(rootViewController: rootViewController)
-		setNavigationBarHidden(true, animated: false)
+		commonInit()
+	}
+	
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+		commonInit()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	private func commonInit() {
+		setNavigationBarHidden(true, animated: false)
 	}
 	
     override func viewDidLoad() {
