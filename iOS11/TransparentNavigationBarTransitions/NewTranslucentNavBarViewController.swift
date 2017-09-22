@@ -4,6 +4,8 @@ import UIKit
 class NewTranslucentNavBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tap)))
         
         view.backgroundColor = .blue
         
@@ -30,6 +32,12 @@ class NewTranslucentNavBarViewController: UIViewController {
 	@objc
 	private func pop() {
 		navigationController?.popViewController(animated: true)
+	}
+	
+	@objc
+	private func tap() {
+		let viewController = OpaqueNavBarViewController()
+		navigationController?.pushViewController(viewController, animated: true)
 	}
     
     func addCustomNavigationBar(color: UIColor = .clear, tintColor tint: UIColor = .white) {
